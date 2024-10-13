@@ -1,3 +1,6 @@
+// COMSC-210 | Lab 21 | Jed Aficial 
+// github link: https://github.com/jaficial/210-lab-21
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -7,7 +10,9 @@ using namespace std;
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 const int MAX_AGE = 20, MIN_AGE = 1;
 
-// Goat class: contains two string arrays for an array of random color names, and an array for random names 
+// Goat class: contains two string arrays for an array of random color names, and an array for random names
+/* NOTE: for the colors and names arrays, I do not have access to replit, thus not having access to the AI 
+   mentioned in the lab docs. Instead, I came up with 15 different names and colors.*/
 class Goat {
 private:
     int age;
@@ -187,8 +192,8 @@ public:
 
 // Driver program
 int main() {
-    
     srand(time(0));
+    
     DoublyLinkedList list;
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
     // for loop sets the linked list with a random amount of Goat objects
@@ -208,24 +213,5 @@ int main() {
     list.print();
     list.print_reverse();
 
-
-
-
-
-    /*
-    for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR-MIN_NR+1) + MIN_NR);
-    cout << "List forward: ";
-    list.print();
-
-    cout << "List backward: ";
-    list.print_reverse();
-
-    cout << "Deleting list, then trying to print.\n";
-    list.~DoublyLinkedList();
-    cout << "List forward: ";
-    list.print();
-    */ 
-    // ORIGINAL CODE ^^
     return 0;
 }
