@@ -190,6 +190,7 @@ public:
             head = head->next;
             delete temp;
         }
+        cout << "Destru
     }
 };
 
@@ -213,8 +214,8 @@ int main() {
     // for some reason, when calling print_reverse, there is memory still being pointed to 
     cout << "List forward: ";
     list.print();
-    // cout << endl << "List reverse: ";
-    // list.print_reverse();
+    cout << endl << "List reverse: ";
+    list.print_reverse();
 
 
 
