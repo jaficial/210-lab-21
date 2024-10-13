@@ -137,7 +137,7 @@ public:
 
         Node* temp = head; // temp points to head
                            // NOTE: Need to test for each parameter in order to by pass the error when comparing objects  
-        while (temp && (temp->data.age != (value.get_age()))) // advances the temp node, and deletes by term, not by position  
+        while (temp && ((temp->data.get_age() != value.get_age()) || (temp->data.get_name() !=value.get_name()) || (temp->data.get_color() != value.get_color()))) // advances the temp node, and deletes by term, not by position  
             temp = temp->next;
 
         if (!temp) return; // Value not found
@@ -197,8 +197,8 @@ public:
 int main() {
     srand(time(0));
     DoublyLinkedList list;
+    list->
     
-
 
 
 
