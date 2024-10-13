@@ -146,7 +146,7 @@ public:
         } else {
             head = temp->next; // Deleting the head
         }
-
+//
         if (temp->next) {
             temp->next->prev = temp->prev;
         } else {
