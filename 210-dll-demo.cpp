@@ -195,16 +195,20 @@ public:
 
 // Driver program
 int main() {
+    // test output looks good so far
     srand(time(0));
     DoublyLinkedList list;
-    list->
+    int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
     
+    for (int i = 0; i < size; i++){
+        Goat goat_value;
+        list.push_back(goat_value);
+    }
+    list.print();
 
 
 
     /*
-    int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
-
     for (int i = 0; i < size; ++i)
         list.push_back(rand() % (MAX_NR-MIN_NR+1) + MIN_NR);
     cout << "List forward: ";
