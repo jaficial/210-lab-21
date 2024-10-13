@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ const int MAX_AGE = 20, MIN_AGE = 1;
           
           DONE || MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
                     so that it has the Goat object as the parameter instead of int   
-          WORKING || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
+          WORKING? || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
                    - call methods to print both forward and backwards to show traversals
           PRINT():  Update both of the print methods in the class;
                         - Should display "List is empty" if list empty
@@ -130,8 +131,8 @@ public:
             tail = newNode; // Inserting at the end
         temp->next = newNode;
     }
-    // COME BACK HERE
-    void delete_node(Goat value) {
+    // COME BACK HERE ----------------------------------------------
+    void delete_node(int value) {
         if (!head) return; // Empty list
 
         Node* temp = head;
@@ -159,7 +160,7 @@ public:
         Node* current = head;
         if (!current) return;
         while (current) {
-            cout << current->data << " ";
+            cout << current->data-> << " ";
             current = current->next;
         }
         cout << endl;
@@ -188,6 +189,18 @@ public:
 int main() {
     srand(time(0));
     DoublyLinkedList list;
+    
+
+
+
+
+
+
+
+
+
+
+    /*
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
 
     for (int i = 0; i < size; ++i)
@@ -202,6 +215,7 @@ int main() {
     list.~DoublyLinkedList();
     cout << "List forward: ";
     list.print();
-
+    */ 
+    // ORIGINAL CODE ^^
     return 0;
 }
