@@ -7,22 +7,7 @@ using namespace std;
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 const int MAX_AGE = 20, MIN_AGE = 1;
 
-/* NOTES: need to make "Goat" class:
-            - DONE || Private members: (int) age, (string) name, (string) color
-              (string array) colors[15], (string array) names[15]
-            - DONE || Default constructors: random age (1-20), random name from "name" array
-              random color from the color array
-            - DONE || Parameter constructor: will be a general 3-element parameter setup for age, name, color:
-          
-          DONE || MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
-                    so that it has the Goat object as the parameter instead of int   
-          WORKING || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
-                   - call methods to print both forward and backwards to show traversals
-          DONE || PRINT():  Update both of the print methods in the class;
-                        - Should display "List is empty" if list empty
-                        - Otherwise output as expected (Check example)*/
-
-// GOAT CLASS DONE
+// Goat class: contains two string arrays for an array of random color names, and an array for random names 
 class Goat {
 private:
     int age;
@@ -36,6 +21,7 @@ private:
                         "Demar", "Sam"};
 public:
     // default constructor
+    // age, color, and name is randomized if default constructor is called
     Goat(){
         age = rand() % ((MAX_AGE - MIN_AGE) + 1) + MIN_AGE;
         color = colors[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from color array
@@ -47,7 +33,7 @@ public:
         color = goat_color;
         name = goat_name;
     }
-    
+    // getters and setters for age, name, and color
     void set_age(int goat_age) {age = goat_age;}
     int get_age() {return age;}
 
@@ -79,7 +65,7 @@ public:
     // constructor
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
-    void push_back(Goat value) {
+    void push_back(Goat value) { // parameter is now a Goat object
         Node* newNode = new Node(value);
         if (!tail)  // if there's no tail, the list is empty
             head = tail = newNode;
@@ -90,7 +76,7 @@ public:
         }
     }
 
-    void push_front(Goat value) {
+    void push_front(Goat value) { // parameter is now a Goat object
         Node* newNode = new Node(value);
         if (!head)  // if there's no head, the list is empty
             head = tail = newNode;
@@ -131,12 +117,12 @@ public:
             tail = newNode; // Inserting at the end
         temp->next = newNode;
     }
-    // 
+    
     void delete_node(Goat value) { // value contains the Goat object from main, data is the temp Goat object
         if (!head) return; // Empty list
 
         Node* temp = head; // temp points to head
-                           // NOTE: Need to test for each parameter in order to by pass the error when comparing objects  
+                           // NOTE: Need to test for each parameter in order to bypass the error when comparing objects  
         while (temp && ((temp->data.get_age() != value.get_age()) || (temp->data.get_name() !=value.get_name()) || (temp->data.get_color() != value.get_color()))) // advances the temp node, and deletes by term, not by position  
             temp = temp->next;
 
@@ -147,7 +133,7 @@ public:
         } else {
             head = temp->next; // Deleting the head
         }
-//
+
         if (temp->next) {
             temp->next->prev = temp->prev;
         } else {
@@ -156,7 +142,7 @@ public:
 
         delete temp;
     }
-    // NOTE: Call the getter attribute for data 
+    // NOTE: Call the getter attributes for data 
     void print() {
         Node* current = head;
         if (!current) {
@@ -174,7 +160,7 @@ public:
 
     void print_reverse() {
         // NOTE: for some reason, when current is assigned to tail node, it points to random memory?
-        // Assign current to head first to check if the list is empty
+        // FIXED: Assigned current to head first to check if the list is empty
         Node* current = head; 
         if (!current) {        
             cout << "List is empty\n";
@@ -196,21 +182,25 @@ public:
             head = head->next;
             delete temp;
         }
-        cout << "Destructor has been called: Memory dealloc'd.\n";
     }
 };
 
 // Driver program
 int main() {
-    // test output looks good so far
+    
     srand(time(0));
     DoublyLinkedList list;
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
-    
+    // for loop sets the linked list with a random amount of Goat objects
     for (int i = 0; i < size; i++){
         Goat goat_value;
         list.push_back(goat_value);
     }
+
+    // value2append is another random goat object that is appended to the tail of the doubly linked list
+    Goat value2append;
+    list.push_back(value2append);
+
     list.print();
     list.print_reverse();
 
