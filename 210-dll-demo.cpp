@@ -3,6 +3,21 @@ using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
+/* NOTES: need to make "Goat" class:
+            - Private members: (int) age, (string) name, (string) color
+              (string array) colors[15], (string array) names[15]
+            - Default constructors: random age (1-20), random name from "name" array
+              random color from the color array
+                - Parameter constructor will be a general 3-element parameter setup:
+          
+          MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
+                    so that it has the Goat object as the parameter instead of int
+                    
+          IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
+                   - call methods to print both forward and backwards to show traversals
+          PRINT():  Update both of the print methods in the class;
+                        - Should display "List is empty" if list empty
+                        - Otherwise output as expected (Check example)*/
 class DoublyLinkedList {
 private:
     struct Node {
