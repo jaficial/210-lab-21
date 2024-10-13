@@ -131,12 +131,13 @@ public:
             tail = newNode; // Inserting at the end
         temp->next = newNode;
     }
-    // COME BACK HERE ----------------------------------------------
+    // 
     void delete_node(Goat value) { // value contains the Goat object from main, data is the temp Goat object
         if (!head) return; // Empty list
 
-        Node* temp = head;
-        while (temp && temp->data != value)
+        Node* temp = head; // temp points to head
+                           // NOTE: Need to test for each parameter in order to by pass the error when comparing objects  
+        while (temp && (temp->data.age != (value.get_age()))) // advances the temp node, and deletes by term, not by position  
             temp = temp->next;
 
         if (!temp) return; // Value not found
@@ -197,12 +198,6 @@ int main() {
     srand(time(0));
     DoublyLinkedList list;
     
-
-
-
-
-
-
 
 
 
