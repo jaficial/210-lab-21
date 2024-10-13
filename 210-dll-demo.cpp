@@ -13,15 +13,15 @@ const int MAX_AGE = 20, MIN_AGE = 1;
               random color from the color array
             - DONE || Parameter constructor: will be a general 3-element parameter setup for age, name, color:
           
-          MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
-                    so that it has the Goat object as the parameter instead of int
-                    
-          IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
+          DONE || MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
+                    so that it has the Goat object as the parameter instead of int   
+          WORKING || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
                    - call methods to print both forward and backwards to show traversals
           PRINT():  Update both of the print methods in the class;
                         - Should display "List is empty" if list empty
                         - Otherwise output as expected (Check example)*/
 
+// GOAT CLASS DONE
 class Goat {
 private:
     int age;
@@ -61,10 +61,10 @@ public:
 class DoublyLinkedList {
 private:
     struct Node {
-        int data;
+        Goat data;
         Node* prev;
         Node* next;
-        Node(int val, Node* p = nullptr, Node* n = nullptr) {
+        Node(Goat val, Node* p = nullptr, Node* n = nullptr) {
             data = val; 
             prev = p;
             next = n;
@@ -78,7 +78,7 @@ public:
     // constructor
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
-    void push_back(int value) {
+    void push_back(Goat value) {
         Node* newNode = new Node(value);
         if (!tail)  // if there's no tail, the list is empty
             head = tail = newNode;
@@ -89,7 +89,7 @@ public:
         }
     }
 
-    void push_front(int value) {
+    void push_front(Goat value) {
         Node* newNode = new Node(value);
         if (!head)  // if there's no head, the list is empty
             head = tail = newNode;
@@ -100,7 +100,7 @@ public:
         }
     }
 
-    void insert_after(int value, int position) {
+    void insert_after(Goat value, int position) {
         if (position < 0) {
             cout << "Position must be >= 0." << endl;
             return;
@@ -130,8 +130,8 @@ public:
             tail = newNode; // Inserting at the end
         temp->next = newNode;
     }
-
-    void delete_node(int value) {
+    // COME BACK HERE
+    void delete_node(Goat value) {
         if (!head) return; // Empty list
 
         Node* temp = head;
