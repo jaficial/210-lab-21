@@ -18,6 +18,15 @@ const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
           PRINT():  Update both of the print methods in the class;
                         - Should display "List is empty" if list empty
                         - Otherwise output as expected (Check example)*/
+
+class Goat {
+private:
+    int age;
+    string name;
+    string color;
+    string colors[15];
+    string names[15];
+};
 class DoublyLinkedList {
 private:
     struct Node {
