@@ -163,22 +163,28 @@ public:
             cout << "List is empty\n";
             return;
         };
-
+        
+        cout << "Forward:\n";
         while (current) {
-            cout << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
+            cout << setw(4) << "" << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
             current = current->next;
         }
         cout << endl;
     }
 
     void print_reverse() {
-        Node* current = tail;
-        if (!current) {
+        // NOTE: for some reason, when current is assigned to tail node, it points to random memory?
+        // Assign current to head first to check if the list is empty
+        Node* current = head; 
+        if (!current) {        
             cout << "List is empty\n";
             return;
         };
+        // if list isn't empty, current is then assigned to the tail node
+        current = tail; 
+        cout << "Backward:\n";
         while (current) {
-            cout << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
+            cout <<  setw(4) << "" << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
             current = current->prev;
         }
         cout << endl;
@@ -190,7 +196,7 @@ public:
             head = head->next;
             delete temp;
         }
-        cout << "Destru
+        cout << "Destructor has been called: Memory dealloc'd.\n";
     }
 };
 
@@ -206,15 +212,10 @@ int main() {
         list.push_back(goat_value);
     }
     list.print();
-    cout << "Now reverse!: \n";
     list.print_reverse();
 
-    cout << "Now to delete the list and checking the output: \n";
     list.~DoublyLinkedList();
-    // for some reason, when calling print_reverse, there is memory still being pointed to 
-    cout << "List forward: ";
     list.print();
-    cout << endl << "List reverse: ";
     list.print_reverse();
 
 
