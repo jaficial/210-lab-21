@@ -2,6 +2,7 @@
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
+const int MAX_AGE = 20, MIN_AGE = 1;
 
 /* NOTES: need to make "Goat" class:
             - Private members: (int) age, (string) name, (string) color
@@ -26,6 +27,13 @@ private:
     string color;
     string colors[15];
     string names[15];
+public:
+    // default constructor
+    Goat(){
+        age = rand() % ((MAX_AGE - MIN_AGE) + 1) + MIN_AGE;
+        //
+
+    }
 };
 class DoublyLinkedList {
 private:
