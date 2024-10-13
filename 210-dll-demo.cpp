@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -38,14 +39,17 @@ public:
         color = colors[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from color array
         name = names[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from names array
     }
-
     // parameter constructor
-    Goat(int age, string color, string name){
-        void setage(int g_age) {age = g_age;}
-        int getage() {return age;}
+    Goat(int g_age, string g_color, string g_name){
+        void set_age(int goat_age)
+        {
+            age = goat_age;
+        }
         
+
     }
 };
+
 class DoublyLinkedList {
 private:
     struct Node {
