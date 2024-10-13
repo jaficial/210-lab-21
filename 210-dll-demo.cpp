@@ -18,7 +18,7 @@ const int MAX_AGE = 20, MIN_AGE = 1;
                     so that it has the Goat object as the parameter instead of int   
           WORKING? || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
                    - call methods to print both forward and backwards to show traversals
-          PRINT():  Update both of the print methods in the class;
+          DONE || PRINT():  Update both of the print methods in the class;
                         - Should display "List is empty" if list empty
                         - Otherwise output as expected (Check example)*/
 
@@ -165,7 +165,6 @@ public:
 
         while (current) {
             cout << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
-            // cout << current->data-> << " ";
             current = current->next;
         }
         cout << endl;
