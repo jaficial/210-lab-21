@@ -155,12 +155,17 @@ public:
 
         delete temp;
     }
-
+    // NOTE: Call the getter attribute for data 
     void print() {
         Node* current = head;
-        if (!current) return;
+        if (!current) {
+            cout << "List is empty\n";
+            return;
+        };
+
         while (current) {
-            cout << current->data-> << " ";
+            cout << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
+            // cout << current->data-> << " ";
             current = current->next;
         }
         cout << endl;
@@ -168,9 +173,12 @@ public:
 
     void print_reverse() {
         Node* current = tail;
-        if (!current) return;
+        if (!current) {
+            cout << "List is empty\n";
+            return;
+        };
         while (current) {
-            cout << current->data << " ";
+            cout << current->data.get_name() << " (" << current->data.get_color() << ", " << current->data.get_age() << ")\n";
             current = current->prev;
         }
         cout << endl;
