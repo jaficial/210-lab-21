@@ -25,8 +25,10 @@ private:
     int age;
     string name;
     string color;
-    string colors[15];
-    string names[15];
+    string colors[16] = {"Beige", "Brown", "Blue", "Pink", ""};
+    string names[16] = {"Lyla", "Dylan", "Mary", "Brian", "AJ", "Dawn", "Lindsy",
+                        "Jordan", "Meg", "Marcy", "Jesus", "Mo", "Gary",
+                        "Demar", "Sam", "Alex"};
 public:
     // default constructor
     Goat(){
