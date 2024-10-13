@@ -5,11 +5,11 @@ const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 const int MAX_AGE = 20, MIN_AGE = 1;
 
 /* NOTES: need to make "Goat" class:
-            - Private members: (int) age, (string) name, (string) color
+            - DONE || Private members: (int) age, (string) name, (string) color
               (string array) colors[15], (string array) names[15]
-            - Default constructors: random age (1-20), random name from "name" array
+            - WORKING || Default constructors: random age (1-20), random name from "name" array
               random color from the color array
-                - Parameter constructor will be a general 3-element parameter setup:
+            - Parameter constructor: will be a general 3-element parameter setup for age, name, color:
           
           MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
                     so that it has the Goat object as the parameter instead of int
@@ -35,9 +35,15 @@ public:
     // default constructor
     Goat(){
         age = rand() % ((MAX_AGE - MIN_AGE) + 1) + MIN_AGE;
-        color = colors[rand() % ((14-0) + 1)];
-        //
+        color = colors[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from color array
+        name = names[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from names array
+    }
 
+    // parameter constructor
+    Goat(int age, string color, string name){
+        void setage(int g_age) {age = g_age;}
+        int getage() {return age;}
+        
     }
 };
 class DoublyLinkedList {
