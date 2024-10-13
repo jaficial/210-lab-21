@@ -16,7 +16,7 @@ const int MAX_AGE = 20, MIN_AGE = 1;
           
           DONE || MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
                     so that it has the Goat object as the parameter instead of int   
-          WORKING? || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
+          WORKING || IN MAIN: - create a DLL object, and append it to a random number of Goat objects range 5-20 
                    - call methods to print both forward and backwards to show traversals
           DONE || PRINT():  Update both of the print methods in the class;
                         - Should display "List is empty" if list empty
