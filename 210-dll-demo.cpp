@@ -25,14 +25,17 @@ private:
     int age;
     string name;
     string color;
-    string colors[16] = {"Beige", "Brown", "Blue", "Pink", ""};
-    string names[16] = {"Lyla", "Dylan", "Mary", "Brian", "AJ", "Dawn", "Lindsy",
+    string colors[15] = {"Beige", "Brown", "Blue", "Pink", "Black", "Grey", "Orange",
+                        "Violet", "Teal", "Green", "Ivory", "Yellow", "Salmon", 
+                        "Olive", "White"};
+    string names[15] = {"Lyla", "Dylan", "Mary", "Brian", "AJ", "Dawn", "Lindsy",
                         "Jordan", "Meg", "Marcy", "Jesus", "Mo", "Gary",
-                        "Demar", "Sam", "Alex"};
+                        "Demar", "Sam"};
 public:
     // default constructor
     Goat(){
         age = rand() % ((MAX_AGE - MIN_AGE) + 1) + MIN_AGE;
+        color = colors[rand() % ((14-0) + 1)];
         //
 
     }
