@@ -205,6 +205,18 @@ int main() {
         list.push_back(goat_value);
     }
     list.print();
+    cout << "Now reverse!: \n";
+    list.print_reverse();
+
+    cout << "Now to delete the list and checking the output: \n";
+    list.~DoublyLinkedList();
+    // for some reason, when calling print_reverse, there is memory still being pointed to 
+    cout << "List forward: ";
+    list.print();
+    // cout << endl << "List reverse: ";
+    // list.print_reverse();
+
+
 
 
 
