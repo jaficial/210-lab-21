@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -8,9 +9,9 @@ const int MAX_AGE = 20, MIN_AGE = 1;
 /* NOTES: need to make "Goat" class:
             - DONE || Private members: (int) age, (string) name, (string) color
               (string array) colors[15], (string array) names[15]
-            - WORKING || Default constructors: random age (1-20), random name from "name" array
+            - DONE || Default constructors: random age (1-20), random name from "name" array
               random color from the color array
-            - Parameter constructor: will be a general 3-element parameter setup for age, name, color:
+            - DONE || Parameter constructor: will be a general 3-element parameter setup for age, name, color:
           
           MODIFY: "DoublyLinkedList class's "push_front()" and "push_back()"
                     so that it has the Goat object as the parameter instead of int
@@ -40,14 +41,21 @@ public:
         name = names[rand() % ((14-0) + 1)]; // picks random index number between 0-14 from names array
     }
     // parameter constructor
-    Goat(int g_age, string g_color, string g_name){
-        void set_age(int goat_age)
-        {
-            age = goat_age;
-        }
-        
-
+    Goat(int goat_age, string goat_color, string goat_name){
+        age = goat_age;
+        color = goat_color;
+        name = goat_name;
     }
+    
+    void set_age(int goat_age) {age = goat_age;}
+    int get_age() {return age;}
+
+    void set_name(string goat_name) {name = goat_name;}
+    string get_name() {return name;}
+
+    void set_color(string goat_color) {color = goat_color;}
+    string get_color() {return color;}
+
 };
 
 class DoublyLinkedList {
