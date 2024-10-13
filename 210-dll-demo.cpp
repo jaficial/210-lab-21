@@ -132,7 +132,7 @@ public:
         temp->next = newNode;
     }
     // COME BACK HERE ----------------------------------------------
-    void delete_node(int value) {
+    void delete_node(Goat value) { // value contains the Goat object from main, data is the temp Goat object
         if (!head) return; // Empty list
 
         Node* temp = head;
